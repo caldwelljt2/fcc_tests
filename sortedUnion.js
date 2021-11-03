@@ -15,6 +15,8 @@ function uniteUnique(...arr) {
     
     }
       console.log('Answer: \n', newArray)
+      const uniteUnique = ([...arr]) => [...new Set(arr.flat())]
+      console.log('Better Answer: ', uniteUnique(arr))
       return newArray;
     }
      
