@@ -14,42 +14,44 @@ function gcd(x, y) {
   }
   const lcm = (a, b) => a * b / gcd(a, b)
   function getRangeArray(arr) {
-    console.log(arr)
+    // console.log(arr)
     let bigVal = arr[0]
     let littleVal = arr[1]
     if (arr[1] > arr[0]) { [bigVal, littleVal] = [littleVal, bigVal] }
-    console.log(littleVal, bigVal)
+    // console.log(littleVal, bigVal)
     let newArray = []
     for (let i = littleVal; i <= bigVal; i++) {
       // console.log(i)
       newArray.push(i)
     }
-    console.log(newArray)
+    // console.log(newArray)
     return newArray;
 }
 
 function smallestCommons(arr) {
     const rangeArray = getRangeArray(arr)
     let total = rangeArray[0]
-    denomMax = rangeArray.reduce((num,total) => {
-            console.log(gcd(num,total))
+    let denomMax = rangeArray.reduce((num,total) => {
+            // console.log(gcd(num,total))
             // if (total < gcd(num,total)) {}
             return lcm(num,total)
         })
     console.log(denomMax)
-    let bigNum, littleNum
-    if (arr[0] < arr[1]) {
-        [littleNum, bigNum] = [ arr[0], arr[1] ]
-    } else {
-        [littleNum, bigNum] = [ arr[1], arr[0] ]
-    }
-    console.log(littleNum,bigNum)
+    // let bigNum, littleNum
+    // if (arr[0] < arr[1]) {
+    //     [littleNum, bigNum] = [ arr[0], arr[1] ]
+    // } else {
+    //     [littleNum, bigNum] = [ arr[1], arr[0] ]
+    // }
+    // console.log(littleNum,bigNum)
 
+    // r
 
+    // for (let i = littleNum; i <= bigNum; i++) {
+    //     // console.log(i)
+    // }
 
-    for (let i = littleNum; i <= bigNum; i++) {
-        // console.log(i)
-    }
+    return denomMax
   }
 
-  smallestCommons([1,5]);
+  console.log(smallestCommons([5,1]));
